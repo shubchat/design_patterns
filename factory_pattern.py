@@ -66,5 +66,19 @@ class Chicago_Pizza(Pizza):
         elif self.pizza_type=='Veggie':
             return veggie_pizza()
 
-    
+      
+        def cheese_pizza():
+            pass
+
+       
+        def pepperoni_pizza():
+            pass
+
+       
+        def clam_pizza():
+            pass
+
+        
+        def veggie_pizza():
+            pass
 
