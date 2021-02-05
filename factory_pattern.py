@@ -19,7 +19,8 @@ class ChicagoPizzaStore(PizzaStore):
         self.type = type
 
     def create_pizza(self):
-        return ChicagoPizza(self.type)
+         Pizza=ChicagoPizza(self.type)
+         return Pizza()
 
 
 class NYPizzaStore(PizzaStore):
@@ -29,7 +30,8 @@ class NYPizzaStore(PizzaStore):
         self.type = type
 
     def create_pizza(self):
-        return NYPizza(self.type)
+        Pizza=NYPizza(self.type)
+        return Pizza()
 
 
 class Pizza(ABC):
@@ -57,29 +59,30 @@ class ChicagoPizza(Pizza):
     def __call__(self):
 
         if self.pizza_type == "Cheese":
-            return cheese_pizza()
+            return self.cheese_pizza()
 
         elif self.pizza_type == "Pepperoni":
-            return pepperoni_pizza()
+            return self.pepperoni_pizza()
 
         elif self.pizza_type == "Clam":
-            return clam_pizza()
+            return self.clam_pizza()
 
         elif self.pizza_type == "Veggie":
-            return veggie_pizza()
+            return self.veggie_pizza()
 
         else:
             return "We dont serve this pizza"
 
+    @staticmethod
     def cheese_pizza():
         return "Chicago cheese pizza"
-
+    @staticmethod
     def pepperoni_pizza():
         return "Chicago pepperoni pizza"
-
+    @staticmethod
     def clam_pizza():
         return "Chicago clam pizza "
-
+    @staticmethod
     def veggie_pizza():
         return "Chicago veggie pizza"
 
