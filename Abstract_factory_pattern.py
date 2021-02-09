@@ -95,12 +95,13 @@ class Pizza():
     def prepare():
         pass
 
+    @staticmethod
     def bake():
-        Print("Bake for 25 min at 250 degrees")
-
+        print("Bake for 25 min at 250 degrees")
+    @staticmethod
     def cut():
         print("Cut Pizza into diagnol shapes")
-
+    @staticmethod
     def box():
         print("Boxing pizza into companies branded boxes")
 
@@ -116,6 +117,7 @@ class Pizza():
 class CheesePizza(Pizza):
 
     def __init__(self,ingredient_factory):
+        # super().__init__(name)
         self.ingredient_factory=ingredient_factory
 
     def prepare(self):
@@ -156,12 +158,12 @@ class ChicagoPizzaStore(PizzaStore):
     def create_pizza(self):
         if self.pizza_type=='Cheese':
             pizza=CheesePizza(self.ingredient_factory)
-            pizza.setname="Chicago style cheese Pizza"
+            pizza.setname("Chicago style cheese Pizza")
             return pizza
 
         elif self.pizza_type=='Clam':
             pizza=ClamPizza(self.ingredient_factory)
-            pizza.setname="Chicago style clam Pizza"
+            pizza.setname("Chicago style clam Pizza")
             return pizza
     
 
@@ -175,11 +177,11 @@ class NYPizzaStore(PizzaStore):
     def create_pizza(self):
         if self.pizza_type=='Cheese':
             pizza=CheesePizza(self.ingredient_factory)
-            pizza.setname="NY style cheese Pizza"
+            pizza.setname("NY style cheese Pizza")
             return pizza
 
         elif self.pizza_type=='Clam':
             pizza=ClamPizza(self.ingredient_factory)
-            pizza.setname="NY style clam Pizza"
+            pizza.setname("NY style clam Pizza")
             return pizza
     
