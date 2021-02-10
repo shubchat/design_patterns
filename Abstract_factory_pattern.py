@@ -151,18 +151,18 @@ class PizzaStore(ABC):
 
 class ChicagoPizzaStore(PizzaStore):
 
-    def __init__(self,pizza_type,ingredient_factory):
+    def __init__(self,pizza_type):
         self.pizza_type=pizza_type
-        self.ingredient_factory=ingredient_factory # How you define the ingredient factory is what decides componenents of a pizza
+        # self.ingredient_factory=ingredient_factory # How you define the ingredient factory is what decides componenents of a pizza
 
     def create_pizza(self):
         if self.pizza_type=='Cheese':
-            pizza=CheesePizza(self.ingredient_factory)
+            pizza=CheesePizza(ChicagoPizzaIngredientFactory)
             pizza.setname("Chicago style cheese Pizza")
             return pizza
 
         elif self.pizza_type=='Clam':
-            pizza=ClamPizza(self.ingredient_factory)
+            pizza=ClamPizza(ChicagoPizzaIngredientFactory)
             pizza.setname("Chicago style clam Pizza")
             return pizza
     
@@ -170,18 +170,18 @@ class ChicagoPizzaStore(PizzaStore):
 
 class NYPizzaStore(PizzaStore):
 
-    def __init__(self,pizza_type,ingredient_factory):
+    def __init__(self,pizza_type):
         self.pizza_type=pizza_type
-        self.ingredient_factory=ingredient_factory # How you define the ingredient factory is what decides componenents of a pizza
+        # self.ingredient_factory=ingredient_factory # How you define the ingredient factory is what decides componenents of a pizza
 
     def create_pizza(self):
         if self.pizza_type=='Cheese':
-            pizza=CheesePizza(self.ingredient_factory)
+            pizza=CheesePizza(NYPizzaIngredientFactory)
             pizza.setname("NY style cheese Pizza")
             return pizza
 
         elif self.pizza_type=='Clam':
-            pizza=ClamPizza(self.ingredient_factory)
+            pizza=ClamPizza(NYPizzaIngredientFactory)
             pizza.setname("NY style clam Pizza")
             return pizza
     
